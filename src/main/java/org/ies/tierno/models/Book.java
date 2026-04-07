@@ -10,7 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 public class Book {
-    private String isbn;
+    private long isbn;
     private String title;
     private String author;
     private List<String> genres;

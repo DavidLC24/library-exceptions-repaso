@@ -3,13 +3,14 @@ package org.ies.tierno.models;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @AllArgsConstructor
 @Data
 public class BookLend {
-    private String isbn;
-    private Date date;
+    private long isbn;
+    private LocalDate date;
     private String nif;
-    private Date devolution;
+    private LocalDate devolution;
 }

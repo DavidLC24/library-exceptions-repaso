@@ -15,7 +15,7 @@ public class Partner {
     private int zipCode;
 
     public void showInfo(){
-        log.info("//Departamento//");
+        log.info("//Socio//");
         log.info("Nif: "+nif+". Nombre: "+name+". Apellido: "+surname+". Número: "+number+". Código postal: "+zipCode+".");
     }
 }

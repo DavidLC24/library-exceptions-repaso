@@ -14,7 +14,7 @@ import java.util.Map;
 @Data
 public class Library {
     private String name;
-    private Map<String, Book> books;
+    private Map<Long, Book> books;
     private Map<String, Partner> partners;
     private List<BookLend> bookLends;
 
@@ -30,7 +30,7 @@ public class Library {
         }
     }
 
-    public Book returnBookByIsbn (String isbn) throws BookNotFoundException{
+    public Book returnBookByIsbn (long isbn) throws BookNotFoundException{
         if (books.containsKey(isbn)){
             return books.get(isbn);
         } else {
@@ -46,12 +46,12 @@ public class Library {
         }
     }
 
-    public boolean PartnerLoanBook (String nif, String isbn)throws BookNotFoundException, MemberNotFoundException{
+    public boolean partnerLoanBook (String nif, long isbn)throws BookNotFoundException, MemberNotFoundException{
         returnBookByIsbn(isbn);
         returnPartnerByNif(nif);
 
         for (var booklend: bookLends){
-            if (booklend.getIsbn().equals(isbn)&& booklend.getIsbn().equals(nif)){
+            if (booklend.getIsbn() == isbn && booklend.getNif().equals(nif)){
                 return true;
             }
         }

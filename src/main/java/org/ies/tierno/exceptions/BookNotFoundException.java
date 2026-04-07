@@ -1,13 +1,14 @@
 package org.ies.tierno.exceptions;
 
 public class BookNotFoundException extends Exception {
-    private final String isbn;
+    private final long isbn;
 
-    public BookNotFoundException( String isbn) {
+    public BookNotFoundException( long isbn) {
+        super("No se ha encontrado el libro con isbn: "+isbn);
         this.isbn = isbn;
     }
 
-    public String getIsbn() {
+    public long getIsbn() {
         return isbn;
     }
 
